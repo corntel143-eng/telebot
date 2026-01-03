@@ -1,3 +1,11 @@
+import express from "express";
+
+const app = express();
+const PORT = process.env.PORT || 10000; // Render provides PORT in env
+
+app.get("/", (req, res) => res.send("🤖 Bot is alive!"));
+
+app.listen(PORT, () => console.log(Server running on port ${PORT}));
 import { Bot, session, InlineKeyboard } from "grammy";
 import { storage } from "./storage";
 import { GoogleGenerativeAI } from "@google/generative-ai";
@@ -579,3 +587,4 @@ bot.start({
 });
 
   console.log("Bot is running 24*7...");
+
